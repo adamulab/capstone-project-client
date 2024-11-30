@@ -22,7 +22,8 @@ header {
 }
 
 .container {
-  background: #f4f4f9;
+  background: #5e5e63;
+  color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -30,7 +31,7 @@ header {
 }
 
 h1 {
-  color: #e96209;
+  color: #1cbdd6;
   margin-bottom: 30px;
 }
 
@@ -60,19 +61,26 @@ button {
   border-radius: 5px;
 }
 
+.inputDiv {
+  display: flex;
+  gap: 10px;
+}
+
 button {
-  background-color: #e96209;
-  color: white;
+  background-color: #1cbdd6;
+  color: #222;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #f37208;
+  background-color: #1cbdd6;
 }
 
 .tab-buttons {
   display: flex;
+  flex-direction: column;
+  gap: 5px;
   justify-content: center;
   margin-bottom: 20px;
 }
@@ -82,13 +90,13 @@ button:hover {
   margin: 0 5px;
   border: none;
   cursor: pointer;
-  background-color: gray;
+  background-color: #1cbdd6;
   color: #333;
   border-radius: 5px;
 }
 
 .tab-buttons button.active {
-  background-color: #e96209;
+  background-color: #c54525;
   color: white;
 }
 
@@ -110,8 +118,19 @@ button:hover {
 
 .task-item {
   background: #f9f9f9;
+  color: #333;
   padding: 10px;
   border: 1px solid #ddd;
   margin-bottom: 10px;
   border-radius: 5px;
+}
+
+.taskTitle {
+  margin-bottom: 20px;
+}
+
+.deleteButton {
+  background-color: #c54525;
+  color: white;
+  margin-top: 20px;
 }

@@ -31,10 +31,12 @@ const displayTasks = (tasks) => {
     const taskItem = document.createElement("div");
     taskItem.className = "task-item";
     taskItem.innerHTML = `
-      <h3>${task.title} (${task.priority})</h3>
+      <h3 class="taskTitle">${task.title} (${task.priority})</h3>
       <p>${task.description}</p>
       <p>Deadline: ${new Date(task.deadline).toDateString()}</p>
-      <button onclick="deleteTask('${task._id}')">Delete</button>
+      <button class="deleteButton" onclick="deleteTask('${
+        task._id
+      }')">Delete</button>
       <button onclick="showUpdateTask('${task._id}', '${task.title}', '${
       task.description
     }', '${task.deadline}', '${task.priority}')">Update</button>
