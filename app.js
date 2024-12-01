@@ -34,12 +34,14 @@ const displayTasks = (tasks) => {
       <h3 class="taskTitle">${task.title} (${task.priority})</h3>
       <p>${task.description}</p>
       <p>Deadline: ${new Date(task.deadline).toDateString()}</p>
-      <button class="deleteButton" onclick="deleteTask('${
-        task._id
-      }')">Delete</button>
+      <div class="task-item-btn">
       <button onclick="showUpdateTask('${task._id}', '${task.title}', '${
       task.description
     }', '${task.deadline}', '${task.priority}')">Update</button>
+      <button class="deleteButton" onclick="deleteTask('${
+        task._id
+      }')">Delete</button>
+      </div>
     `;
     taskList.appendChild(taskItem);
   });
@@ -114,7 +116,7 @@ loginForm.addEventListener("submit", async (e) => {
       authToken = data.token;
       authSection.style.display = "none";
       tabButtons.style.display = "none";
-      taskSection.style.display = "flex";
+      taskSection.style.display = "block";
       taskSection.style.gap = "40px";
       logoutSection.style.display = "block";
       fetchTasks();
