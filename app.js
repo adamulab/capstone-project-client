@@ -1,5 +1,6 @@
 // Base URL for the backend API
-const BASE_URL = "http://localhost:5000/api";
+// const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "https://threemtt-capstone-project-api.onrender.com/api";
 
 // Token storage
 let authToken = null;
