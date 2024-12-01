@@ -24,28 +24,37 @@ header {
 
 header h1 {
   font-size: 40px;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 header h2 {
   font-size: 30px;
+  text-decoration: none;
+  border: 1px dashed #c54525;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 header h3 {
   font-size: 25px;
+  background-color: #c54525;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .container {
-  background: #5e5e63;
-  color: white;
+  background: #f8f7f7;
+  color: #333;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  min-width: 400px;
+  width: 500px;
 }
 
 h1 {
   color: #1cbdd6;
-  margin-bottom: 30px;
 }
 
 h1,
@@ -87,7 +96,8 @@ button {
 }
 
 button:hover {
-  background-color: #1cbdd6;
+  background-color: #052d33;
+  color: white;
 }
 
 .tab-buttons {
@@ -151,6 +161,7 @@ button:hover {
 
 .popup-content h2 {
   margin-top: 0;
+  color: #1cbdd6;
 }
 
 .popup-content button {
@@ -162,8 +173,8 @@ button:hover {
 }
 
 .task-item {
-  width: 400px;
-  background: #f9f9f9;
+  width: 100%;
+  background: #ffffff;
   color: #333;
   padding: 10px;
   border: 1px solid #ddd;
@@ -171,13 +182,19 @@ button:hover {
   border-radius: 5px;
 }
 
-.task-item-btn {
+.itemBtnDev {
   display: flex;
   gap: 10px;
 }
 
 .taskTitle {
-  margin-bottom: 20px;
+  color: #c54525;
+}
+
+.taskTitle,
+.taskDescription,
+.deadline {
+  margin-bottom: 5px;
 }
 
 .task-item-btn button {

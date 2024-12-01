@@ -8,9 +8,9 @@
   </head>
   <body>
     <header>
-      <h1>3MTT Capstone Project</h1>
+      <h1>Capstone Project</h1>
       <h2>Software Development Course</h2>
-      <h3>Cohort 2</h3>
+      <h3>FE/23/59926933 - Cohort 2</h3>
     </header>
     <div class="container">
       <h1>Task Manager</h1>
@@ -20,7 +20,6 @@
         <button id="register-tab" class="active">Register</button>
         <button id="login-tab">Login</button>
       </div>
-
       <!-- Logout Button -->
       <div id="logout-section" style="display: none">
         <button id="logout-btn">Logout</button>
@@ -68,10 +67,27 @@
       </div>
 
       <!-- Task Management -->
-      <div id="task-section" class="taskwrapper" style="display: none">
+      <div id="task-section" class="taskwrapper">
+        <div class="left">
+          <form id="task-form">
+            <h2>Create Task</h2>
+            <input
+              type="text"
+              id="task-title"
+              placeholder="Task Title"
+              required
+            />
+            <textarea id="task-desc" placeholder="Description"></textarea>
+            <input type="date" id="task-deadline" required />
+            <select id="task-priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+            <button type="submit">Add Task</button>
+          </form>
+        </div>
         <div class="right">
-          <!-- Button to open Create Task popup -->
-          <button id="open-create-task-btn">+ Create Task</button>
           <div id="filter-section">
             <input type="text" id="search-bar" placeholder="Search tasks..." />
             <select id="filter-priority">
@@ -81,29 +97,31 @@
               <option value="high">High</option>
             </select>
           </div>
-          <div id="task-list"></div>
-        </div>
 
-        <!-- Create Task Popup -->
-        <div id="create-task-popup" class="popup-overlay" style="display: none">
-          <div class="popup-content">
-            <h2>Create Task</h2>
-            <form id="task-form">
+          <div id="task-list"></div>
+
+          <!-- Update Task Form (Initially Hidden) -->
+          <div id="update-task-section" style="display: none">
+            <h2>Update Task</h2>
+            <form id="update-task-form">
               <input
                 type="text"
-                id="task-title"
+                id="update-task-title"
                 placeholder="Task Title"
                 required
               />
-              <textarea id="task-desc" placeholder="Description"></textarea>
-              <input type="date" id="task-deadline" required />
-              <select id="task-priority">
+              <textarea
+                id="update-task-desc"
+                placeholder="Description"
+              ></textarea>
+              <input type="date" id="update-task-deadline" required />
+              <select id="update-task-priority">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
               </select>
-              <button type="submit">Add Task</button>
-              <button type="button" id="close-create-task-btn">Cancel</button>
+              <button type="submit">Update Task</button>
+              <button type="button" id="cancel-update">Cancel</button>
             </form>
           </div>
         </div>
@@ -130,21 +148,6 @@
         registerTab.classList.remove("active");
         loginContent.classList.add("active");
         registerContent.classList.remove("active");
-      });
-
-      // Popup logic for Create Task
-      const openCreateTaskBtn = document.getElementById("open-create-task-btn");
-      const createTaskPopup = document.getElementById("create-task-popup");
-      const closeCreateTaskBtn = document.getElementById(
-        "close-create-task-btn"
-      );
-
-      openCreateTaskBtn.addEventListener("click", () => {
-        createTaskPopup.style.display = "flex";
-      });
-
-      closeCreateTaskBtn.addEventListener("click", () => {
-        createTaskPopup.style.display = "none";
       });
     </script>
   </body>

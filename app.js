@@ -1,6 +1,5 @@
 // Base URL for the backend API
-// const BASE_URL = "http://localhost:5000/api";
-const BASE_URL = "https://threemtt-capstone-project-api.onrender.com/api";
+const BASE_URL = "http://localhost:5000/api";
 
 // Token storage
 let authToken = null;
@@ -33,15 +32,17 @@ const displayTasks = (tasks) => {
     taskItem.className = "task-item";
     taskItem.innerHTML = `
       <h3 class="taskTitle">${task.title} (${task.priority})</h3>
-      <p>${task.description}</p>
-      <p>Deadline: ${new Date(task.deadline).toDateString()}</p>
-      <div class="task-item-btn">
-      <button onclick="showUpdateTask('${task._id}', '${task.title}', '${
-      task.description
-    }', '${task.deadline}', '${task.priority}')">Update</button>
+      <p class="taskDescription">${task.description}</p>
+      <p class="deadline"><strong>Deadline:</strong> ${new Date(
+        task.deadline
+      ).toDateString()}</p>
+      <div class="itemBtnDev">
       <button class="deleteButton" onclick="deleteTask('${
         task._id
       }')">Delete</button>
+      <button onclick="showUpdateTask('${task._id}', '${task.title}', '${
+      task.description
+    }', '${task.deadline}', '${task.priority}')">Update</button>
       </div>
     `;
     taskList.appendChild(taskItem);
